@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nf_BouncingBalls
+namespace nf_nPF_example1
 {
     
     internal partial class Resources
@@ -20,7 +20,7 @@ namespace nf_BouncingBalls
             {
                 if ((Resources.manager == null))
                 {
-                    Resources.manager = new System.Resources.ResourceManager("nf_BouncingBalls.Resources", typeof(Resources).Assembly);
+                    Resources.manager = new System.Resources.ResourceManager("nf_nPF_example1.Resources", typeof(Resources).Assembly);
                 }
                 return Resources.manager;
             }
@@ -32,7 +32,7 @@ namespace nf_BouncingBalls
         [System.SerializableAttribute()]
         internal enum BitmapResources : short
         {
-            SoccerBall = 5884,
+            Canvas_Panel_Icon_Small = 20403,
         }
     }
 }

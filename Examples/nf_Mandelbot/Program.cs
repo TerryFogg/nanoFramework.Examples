@@ -9,12 +9,9 @@ namespace nf_Mandelbrot
     {
         public static void Main()
         {
-
             int iterations = 8;
             Bitmap fullScreenBitmap = new Bitmap(240, 135);
             Mandelbrot mb = new Mandelbrot(fullScreenBitmap,iterations);
-
-
 
             Thread.Sleep(Timeout.Infinite);
 

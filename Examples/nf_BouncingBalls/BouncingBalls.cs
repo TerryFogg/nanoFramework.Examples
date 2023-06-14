@@ -27,7 +27,7 @@ namespace nf_BouncingBalls
         private Point[] BallVelocity;
         private Bitmap ScreenBitmap { get; set; }
 
-        public BouncingBalls(Bitmap fullScreenBitmap, Font DisplayFont)
+        public BouncingBalls(Bitmap fullScreenBitmap)
         {
             ScreenBitmap = fullScreenBitmap;
             soccerBall = Resources.GetBitmap(Resources.BitmapResources.SoccerBall);

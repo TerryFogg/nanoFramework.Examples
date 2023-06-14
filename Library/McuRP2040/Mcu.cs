@@ -1,12 +1,8 @@
-﻿
+﻿using System;
+using System.Device.Gpio;
 
-using nanoFramework.IO.RP2040;
-using System.ComponentModel;
-using static nanoFramework.IO.RP2040.RP2040;
-
-namespace nanoFramework.IO.RP2040
+namespace nanoFramework.Mcu
 {
-
     //  RP2040 has 36 multi-functional General Purpose Input / Output(GPIO) pins, divided into two banks.
     //  (QSPI_SS, QSPI_SCLK and QSPI_SD0 to QSPI_SD3) are used to execute code from an external flash device.
     //  This leaves the User bank(GPIO0 to GPIO29) for the general use.
@@ -16,10 +12,8 @@ namespace nanoFramework.IO.RP2040
     //  Each peripheral input (e.g.UART0 RX) should only be selected on one _GPIO_ at a time.
     //  If the same peripheral input is connected to multiple GPIOs, the peripheral sees the logical OR of these
     //  GPIO inputs.
-    //  
-    public class RP2040
+    public class McuRP2040
     {
-
         public class Functions
         {
             public const int GpioFunctionXIP = 0;
@@ -42,152 +36,150 @@ namespace nanoFramework.IO.RP2040
         /// </summary>
         public class GPIO
         {
-            public const int Gpio0 = 1;
-            public const int Gpio1 = 2;
-            public const int Gpio2 = 3;
-            public const int Gpio3 = 4;
-            public const int Gpio4 = 5;
-            public const int Gpio5 = 6;
-            public const int Gpio6 = 7;
-            public const int Gpio7 = 8;
-            public const int Gpio8 = 9;
-            public const int Gpio9 = 10;
-            public const int Gpio10 = 11;
-            public const int Gpio11 = 12;
-            public const int Gpio12 = 13;
-            public const int Gpio13 = 14;
-            public const int Gpio14 = 15;
-            public const int Gpio15 = 16;
-            public const int Gpio16 = 17;
-            public const int Gpio17 = 18;
-            public const int Gpio18 = 19;
-            public const int Gpio19 = 20;
-            public const int Gpio20 = 21;
-            public const int Gpio21 = 22;
-            public const int Gpio22 = 23;
-            public const int Gpio23 = 24;
-            public const int Gpio24 = 25;
-            public const int Gpio25 = 26;
-            public const int Gpio26 = 27;
-            public const int Gpio27 = 28;
-            public const int Gpio28 = 29;
-            public const int Gpio29 = 30;
-        }
+            public const int GpioNONE = -1;
+            public const int Gpio0 = 0;
+            public const int Gpio1 = 1;
+            public const int Gpio2 = 2;
+            public const int Gpio3 = 3;
+            public const int Gpio4 = 4;
+            public const int Gpio5 = 5;
+            public const int Gpio6 = 6;
+            public const int Gpio7 = 7;
+            public const int Gpio8 = 8;
+            public const int Gpio9 = 9;
+            public const int Gpio10 = 10;
+            public const int Gpio11 = 11;
+            public const int Gpio12 = 12;
+            public const int Gpio13 = 13;
+            public const int Gpio14 = 14;
+            public const int Gpio15 = 15;
+            public const int Gpio16 = 16;
+            public const int Gpio17 = 17;
+            public const int Gpio18 = 18;
+            public const int Gpio19 = 19;
+            public const int Gpio20 = 20;
+            public const int Gpio21 = 21;
+            public const int Gpio22 = 22;
+            public const int Gpio23 = 23;
+            public const int Gpio24 = 24;
+            public const int Gpio25 = 25;
+            public const int Gpio26 = 26;
+            public const int Gpio27 = 27;
+            public const int Gpio28 = 28;
+            public const int Gpio29 = 29;
 
-        /// <summary>
-        /// The GPIOs on RP2040 have four different output drive strengths,
-        /// These are not hard limits, nor do they mean that they will always be sourcing (or sinking)
-        /// the selected amount of milliamps. 
-        /// NOTE: The amount of current a GPIO sources or sinks is dependant on the load attached to it.
-        /// </summary>
-        public enum NominalDriveStrength
-        {
             /// <summary>
-            /// Limit current to 2 milliamps
+            /// The GPIOs on RP2040 have four different output drive strengths,
+            /// These are not hard limits, nor do they mean that they will always be sourcing (or sinking)
+            /// the selected amount of milliamps. 
+            /// NOTE: The amount of current a GPIO sources or sinks is dependant on the load attached to it.
             /// </summary>
-            Strength2ma = 0,
-            /// <summary>
-            /// Limit current to 4 milliamps
-            /// </summary>
-            Strength4ma = 1,
-            /// <summary>
-            /// Limit current to 8 milliamps
-            /// </summary>
-            Strength8ma = 2,
-            /// <summary>
-            /// Limit current to 12 milliamps
-            /// </summary>
-            Strength12ma = 3,
-            /// <summary>
-            /// Default value after MCU reset/boot
-            /// </summary>
-            StrengthDefault = Strength4ma,
+            public enum NominalDriveStrength
+            {
+                /// <summary>
+                /// Limit current to 2 milliamps
+                /// </summary>
+                Strength2ma = 0,
+                /// <summary>
+                /// Limit current to 4 milliamps
+                /// </summary>
+                Strength4ma = 1,
+                /// <summary>
+                /// Limit current to 8 milliamps
+                /// </summary>
+                Strength8ma = 2,
+                /// <summary>
+                /// Limit current to 12 milliamps
+                /// </summary>
+                Strength12ma = 3,
+                /// <summary>
+                /// Default value after MCU reset/boot
+                /// </summary>
+                StrengthDefault = Strength4ma,
+            }
 
-        }
+            /// <summary>
+            /// Input hysteresis (schmitt trigger mode)
+            /// </summary>
+            public enum SchmittTrigger
+            {
+                /// <summary>
+                /// Enable
+                /// </summary>
+                SchmittEnable = 1,
+                /// <summary>
+                /// Disable
+                /// </summary>
+                SchmittDisable = 2,
+                /// <summary>
+                /// Schmitt trigger is enabled at MCU boot/reset
+                /// </summary>
+                ScmittDefault = SchmittEnable,
+            }
 
-        /// <summary>
-        /// Input hysteresis (schmitt trigger mode)
-        /// </summary>
-        public enum SchmittTrigger
-        {
             /// <summary>
-            /// Enable
+            /// How fast to drive the Pin 
+            /// Slew Rate
             /// </summary>
-            SchmittEnable = 1,
-            /// <summary>
-            /// Disable
-            /// </summary>
-            SchmittDisable = 2,
-            /// <summary>
-            /// Schmitt trigger is enabled at MCU boot/reset
-            /// </summary>
-            ScmittDefault = SchmittEnable,
+            public enum SlewRateLimiting
+            {
+                /// <summary>
+                /// Slow
+                /// </summary>
+                SlewSlow = 0,
+                /// <summary>
+                /// Fast
+                /// </summary>
+                SlewFast = 1,
+                /// <summary>
+                /// Default is slow at MCU boot/reset
+                /// </summary>
+                SlewDefault = SlewSlow,
+            }
 
-        }
+            /// <summary>
+            /// The input buffer can be disabled, 
+            /// to reduce current consumption when the pad is unused,
+            /// unconnected or connected to an analogue signal.
+            /// peripherals
+            /// </summary>
+            public enum PowerSaveFeatures
+            {
+                /// <summary>
+                ///  Disable the driver. ??? Has priority over output enable from
+                /// </summary>
+                OutputDriverDisabled = 0,
+                /// <summary>
+                /// Enable the output driver disabled at MCU boot/reset
+                /// </summary>
+                OutputDriverEnabled = 1,
+                /// <summary>
+                /// Default is output driver disabled at MCU boot/reset
+                /// </summary>
+                OutputDriverDefault = OutputDriverDisabled,
+                /// <summary>
+                /// Disable the input buffer to conserve power
+                /// </summary>
+                InputBufferDisabled = 0,
+                /// <summary>
+                /// Enable the input buffer
+                /// </summary>
+                InputBufferEnabled = 1,
+                /// <summary>
+                /// Default is input buffer disabled at MCU boot/reset
+                /// </summary>
+                InputBufferDefault = InputBufferDisabled,
+            }
 
-        /// <summary>
-        /// How fast to drive the Pin 
-        /// Slew Rate
-        /// </summary>
-        public enum SlewRateLimiting
-        {
             /// <summary>
-            /// Slow
+            ///  Using IOVDD voltages greater than 1.8V, with the input thresholds set for 1.8V may result in damage to the chip
             /// </summary>
-            SlewSlow = 0,
-            /// <summary>
-            /// Fast
-            /// </summary>
-            SlewFast = 1,
-            /// <summary>
-            /// Default is slow at MCU boot/reset
-            /// </summary>
-            SlewDefault = SlewSlow,
-
-        }
-
-        /// <summary>
-        /// The input buffer can be disabled, 
-        /// to reduce current consumption when the pad is unused,
-        /// unconnected or connected to an analogue signal.
-        /// peripherals
-        /// </summary>
-        public enum PowerSaveFeatures
-        {
-            /// <summary>
-            ///  Disable the driver. ??? Has priority over output enable from
-            /// </summary>
-            OutputDriverDisabled = 0,
-            /// <summary>
-            /// Enable the output driver disabled at MCU boot/reset
-            /// </summary>
-            OutputDriverEnabled = 1,
-            /// <summary>
-            /// Default is output driver disabled at MCU boot/reset
-            /// </summary>
-            OutputDriverDefault = OutputDriverDisabled,
-            /// <summary>
-            /// Disable the input buffer to conserve power
-            /// </summary>
-            InputBufferDisabled = 0,
-            /// <summary>
-            /// Enable the input buffer
-            /// </summary>
-            InputBufferEnabled = 1,
-            /// <summary>
-            /// Default is input buffer disabled at MCU boot/reset
-            /// </summary>
-            InputBufferDefault = InputBufferDisabled,
-        }
-
-        /// <summary>
-        ///  Using IOVDD voltages greater than 1.8V, with the input thresholds set for 1.8V may result in damage to the chip
-        /// </summary>
-        public enum VoltageSelect
-        {
-            Default = Voltage3_3V,
-            Voltage3_3V = 0,
-            Voltage1_8V = 1,
+            public enum VoltageSelect
+            {
+                Default = Voltage3_3V,
+                Voltage3_3V = 0,
+                Voltage1_8V = 1,
+            }
         }
 
         /// <summary>
@@ -252,7 +244,6 @@ namespace nanoFramework.IO.RP2040
                 FastModePlus = 1000,
                 Default = FastMode
             }
-
         }
 
         /// <summary>
@@ -276,12 +267,14 @@ namespace nanoFramework.IO.RP2040
         /// 
         public class Adc
         {
+            public int NumberOfAdcChannels = 5;
             public const int Adc0 = GPIO.Gpio26;
             public const int Adc1 = GPIO.Gpio27;
             public const int Adc2 = GPIO.Gpio28;
             public const int Adc3 = GPIO.Gpio29;
+            public const int AdcInternalTemperature = 0;
 
-            enum AdcMode
+            public enum AdcMode
             {
                 RoundRobinSampling = 0,
             }
@@ -388,30 +381,32 @@ namespace nanoFramework.IO.RP2040
             public const int GPOut3 = GPIO.Gpio25;
         }
 
+        /// <summary>
+        /// The RP2040 has 2 identical instances of a UART peripheral, based on the ARM Primecell UART (PL011)
+        /// 
+        /// Supports a maximum baud rate of UARTCLK / 16 in UART mode (7.8 Mbaud at 125MHz)
+        /// 
+        ///  Each instance supports the following features:
+        ///   Separate 32×8 Tx and 32×12 Rx FIFOs
+        ///   Programmable baud rate generator, clocked by clk_peri(see Section 2.15.1)
+        ///   Standard asynchronous communication bits(start, stop, parity) added on transmit and removed on receive
+        ///   line break detection
+        ///   programmable serial interface (5, 6, 7, or 8 bits)
+        ///   1 or 2 stop bits
+        ///   programmable hardware flow control
+        ///   
+        /// Offers similar functionality to the industry-standard 16C650 UART device
+        /// </summary>
         public class UART
         {
-            /// <summary>
-            /// The RP2040 has 2 identical instances of a UART peripheral, based on the ARM Primecell UART (PL011)
-            /// 
-            /// Supports a maximum baud rate of UARTCLK / 16 in UART mode (7.8 Mbaud at 125MHz)
-            /// 
-            ///  Each instance supports the following features:
-            ///   Separate 32×8 Tx and 32×12 Rx FIFOs
-            ///   Programmable baud rate generator, clocked by clk_peri(see Section 2.15.1)
-            ///   Standard asynchronous communication bits(start, stop, parity) added on transmit and removed on receive
-            ///   line break detection
-            ///   programmable serial interface (5, 6, 7, or 8 bits)
-            ///   1 or 2 stop bits
-            ///   programmable hardware flow control
-            ///   
-            /// Offers similar functionality to the industry-standard 16C650 UART device
-            /// </summary>
-            enum UARTInstance
+            public const int NumberOfUarts = 2;
+
+            public enum UARTInstance
             {
                 UART0 = 0,
                 UART1 = 1
             }
-            enum UartBaudRate
+            public enum UartBaudRate
             {
                 B50 = 50,
                 B75 = 75,
@@ -478,8 +473,6 @@ namespace nanoFramework.IO.RP2040
             public const int UART1TX_Gpio24 = GPIO.Gpio24;
 
         }
-
     }
-
 }
 

@@ -31,16 +31,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\fred.dat" />
-    <None Include="Resources\segoeuiregular12.tinyfnt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\waterfall.jpg" />
-    <None Include="Resources\one.gif" />
-    <None Include="Resources\res1.bmp" />
-    <None Include="Resources\res8.bmp" />
-    <None Include="Resources\bestcompression.jpg" />
-    <None Include="Resources\res24.bmp" />
     <Content Include="Resources\SoccerBall.gif" />
   </ItemGroup>
   <ItemGroup>

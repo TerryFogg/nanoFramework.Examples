@@ -3,7 +3,6 @@ using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System.Diagnostics;
 
-
 namespace nf_Mandelbrot
 {
     internal class Mandelbrot
@@ -15,21 +14,12 @@ namespace nf_Mandelbrot
             Color outputPixelColour = Color.White;
             int outputBlockCounter = 0;
 
-
-            //int redMax = ColorUtility.To16Bpp(Color.DarkRed);
-            //int redMin = ColorUtility.To16Bpp(Color.LightPink);
-            //int blueMax = ColorUtility.To16Bpp(Color.DarkBlue);
-            //int blueMin = ColorUtility.To16Bpp(Color.LightBlue);
-            //int greenMax = ColorUtility.To16Bpp(Color.DarkGreen);
-            //int greenMin = ColorUtility.To16Bpp(Color.LightGreen);
-
             int blueMax = 0xFF0000;
             int blueMin = 0x010000;
             int greenMax = 0x00FF00;
             int greenMin = 0x000100;
             int redMax = 0x0000FF;
             int redMin = 0x000001;
-
 
             for (int i = 0; i < xRes; i++)
             {
@@ -55,20 +45,10 @@ namespace nf_Mandelbrot
                     else
                     {
                         double colorvalue = (double)iteration / (double)iterations;
-
                         byte rAverage = (byte)(redMin + (int)((redMax - redMin) * colorvalue));
                         byte gAverage = (byte)(greenMin + (int)((greenMax - greenMin) * colorvalue));
                         byte bAverage = (byte)(blueMin + (int)((blueMax - blueMin) * colorvalue));
                         outputPixelColour = ColorUtility.ColorFromRGB(rAverage, gAverage, bAverage);
-
-
-                        //   double pixelColorValue = colorvalue * ColorUtility.To16Bpp(start_color) + (colorvalue - 1) * ColorUtility.To16Bpp(end_color);
-
-                        //Color pixelColor = ColorUtility.ColorFromRGB((byte)(colorvalue * 255), (byte)(colorvalue * 255),
-                        //    (byte)(colorvalue * 255));
-
-                        //Color c = new Color();
-                        //outputPixelColour = ColorUtility.pixelColorValue.
                     }
                     mandelbrotBitmap.SetPixel(i, j, outputPixelColour);
 
@@ -79,7 +59,6 @@ namespace nf_Mandelbrot
                 }
             }
             mandelbrotBitmap.Flush();
-
         }
     }
 }

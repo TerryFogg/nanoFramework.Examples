@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nf_BouncingBalls
+namespace nf_SimpleNPF
 {
     
     internal partial class Resources
@@ -20,7 +20,7 @@ namespace nf_BouncingBalls
             {
                 if ((Resources.manager == null))
                 {
-                    Resources.manager = new System.Resources.ResourceManager("nf_BouncingBalls.Resources", typeof(Resources).Assembly);
+                    Resources.manager = new System.Resources.ResourceManager("nf_SimpleNPF.Resources", typeof(Resources).Assembly);
                 }
                 return Resources.manager;
             }
@@ -29,10 +29,20 @@ namespace nf_BouncingBalls
         {
             return ((nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
+        internal static nanoFramework.UI.Font GetFont(Resources.FontResources id)
+        {
+            return ((nanoFramework.UI.Font)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
+        }
         [System.SerializableAttribute()]
         internal enum BitmapResources : short
         {
-            SoccerBall = 5884,
+            Scrollable_Panel_Icon_Small = 4749,
+        }
+        [System.SerializableAttribute()]
+        internal enum FontResources : short
+        {
+            small = 13070,
+            NinaB = 18060,
         }
     }
 }
