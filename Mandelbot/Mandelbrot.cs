@@ -2,6 +2,7 @@
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using System.Diagnostics;
+using System.Drawing;
 
 namespace nf_Mandelbrot
 {
@@ -48,7 +49,7 @@ namespace nf_Mandelbrot
                         byte rAverage = (byte)(redMin + (int)((redMax - redMin) * colorvalue));
                         byte gAverage = (byte)(greenMin + (int)((greenMax - greenMin) * colorvalue));
                         byte bAverage = (byte)(blueMin + (int)((blueMax - blueMin) * colorvalue));
-                        outputPixelColour = ColorUtility.ColorFromRGB(rAverage, gAverage, bAverage);
+                        outputPixelColour = Color.FromArgb(rAverage, gAverage, bAverage);
                     }
                     mandelbrotBitmap.SetPixel(i, j, outputPixelColour);
 

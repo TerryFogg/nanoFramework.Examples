@@ -118,49 +118,34 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BestCompression" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\JPEGs\BestCompression.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="b1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b1.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="BestCompressionLowQuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\jpegs\bestcompressionlowquality.jpg;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b2.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="BestQuality" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\jpegs\bestquality.jpg;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b3.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="BestQuality1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\jpegs\bestquality.jpg;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b4.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="ninab" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\ninab.tinyfnt;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b5.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="One" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\gif\one.gif;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b6.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Res1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\bmp\res1.bmp;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b7.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Res24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\bmp\res24.bmp;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b8.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Res32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\bmp\res32.bmp;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="b9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\b9.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Res4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\bmp\res4.bmp;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
-  </data>
-  <data name="Res8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\bmp\res8.bmp;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value>strieng m</value>
-  </data>
-  <data name="touchgfx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>resources\icon\touchgfx.ico;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
-  </data>
-  <data name="Two" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\GIF\Two.gif;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="xx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>xx.dat;System.Byte[], mscorlib, Version=1.12.0.4, Culture=neutral, PublicKeyToken=c07d481e9758c731</value>
+  <data name="small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\small.tinyfnt;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

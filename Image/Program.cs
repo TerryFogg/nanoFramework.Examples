@@ -1,5 +1,6 @@
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
+using System.Drawing;
 using System.Threading;
 
 namespace nf_Image
@@ -8,8 +9,7 @@ namespace nf_Image
     {
         public static void Main()
         {
-            Bitmap fullScreenBitmap = new Bitmap(480, 272);
-      //          DisplayControl.FullScreen;
+            Bitmap fullScreenBitmap = new Bitmap(DisplayControl.ScreenWidth, DisplayControl.ScreenHeight);
             fullScreenBitmap.Clear();
 
             byte[] nf_touchgfx = Resources.GetBytes(Resources.BinaryResources.touchgfx);

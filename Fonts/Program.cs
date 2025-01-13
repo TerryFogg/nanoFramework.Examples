@@ -9,10 +9,11 @@ namespace nf_Fonts
     {
         public static void Main()
         {
+          //  Bitmap fullScreenBitmap = DisplayControl.FullScreen;
+
+            Bitmap fullScreenBitmap = new Bitmap(DisplayControl.ScreenWidth,DisplayControl.ScreenHeight);
+
             Font DisplayFont = Resources.GetFont(Resources.FontResources.segoeuiregular12);
-            //            Bitmap fullScreenBitmap = new Bitmap(480, 272);
-            Bitmap fullScreenBitmap = new Bitmap(240, 135);
-            //Bitmap fullScreenBitmap = new Bitmap(240, 240);
             fullScreenBitmap.Clear();
 
             FontExample fe = new FontExample(fullScreenBitmap, DisplayFont);

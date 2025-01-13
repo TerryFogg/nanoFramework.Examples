@@ -8,6 +8,7 @@ using nanoFramework.UI.Threading;
 using System;
 using System.Collections;
 
+
 namespace nf_SimpleNPF
 {
     internal class SimpleNF : Application
@@ -1031,7 +1032,7 @@ namespace nf_SimpleNPF
             /// <param name="rBitmap"></param>
             /// <param name="description"></param>
             /// <param name="rLargeSizeBitmap"></param>
-            public MenuItem(Resource rBitmapSmall,
+            public MenuItem(Resources rBitmapSmall,
                 Resources.BitmapResources rBitmap, string description,
                 Resources.BitmapResources rLargeSizeBitmap)
             {

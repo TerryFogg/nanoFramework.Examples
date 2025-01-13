@@ -7,15 +7,10 @@ namespace nf_MatrixRain
     {
         public static void Main()
         {
-           Bitmap fullScreenBitmap = new Bitmap(240, 135);
-
-            // DisplayControl.FullScreen;
+            Bitmap fullScreenBitmap = new Bitmap(DisplayControl.ScreenWidth, DisplayControl.ScreenHeight);
             fullScreenBitmap.Clear();
-
             MatrixRain bb = new MatrixRain(fullScreenBitmap);
             Thread.Sleep(Timeout.Infinite);
-
-
         }
     }
 }

@@ -10,7 +10,7 @@
 
 namespace nf_Image
 {
-
+    
     internal partial class Resources
     {
         private static System.Resources.ResourceManager manager;

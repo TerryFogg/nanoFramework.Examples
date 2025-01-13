@@ -31,19 +31,28 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.14.2\lib\mscorlib.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.Graphics">
+      <HintPath>..\packages\nanoFramework.Graphics.1.2.22\lib\nanoFramework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.Graphics.Core">
+      <HintPath>..\packages\nanoFramework.Graphics.1.2.22\lib\nanoFramework.Graphics.Core.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.ResourceManager">
-      <HintPath>..\packages\nanoFramework.ResourceManager.1.2.13\lib\nanoFramework.ResourceManager.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.ResourceManager.1.2.19\lib\nanoFramework.ResourceManager.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.Runtime.Events">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.6\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.18\lib\nanoFramework.Runtime.Events.dll</HintPath>
+    </Reference>
+    <Reference Include="nanoFramework.Runtime.Native">
+      <HintPath>..\packages\nanoFramework.Runtime.Native.1.7.1\lib\nanoFramework.Runtime.Native.dll</HintPath>
     </Reference>
     <Reference Include="nanoFramework.System.Collections">
-      <HintPath>..\packages\nanoFramework.System.Collections.1.5.18\lib\nanoFramework.System.Collections.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.System.Collections.1.5.45\lib\nanoFramework.System.Collections.dll</HintPath>
     </Reference>
     <Reference Include="System.Device.Gpio">
-      <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.1.28\lib\System.Device.Gpio.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.System.Device.Gpio.1.1.41\lib\System.Device.Gpio.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -53,7 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library\McuRP2040\McuRP2040.nfproj" />
-    <ProjectReference Include="..\Library\nanoFrameworkGraphicsLibrary\nanoFrameworkGraphicsLibrary.nfproj" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Canvas Panel Icon.JPG" />

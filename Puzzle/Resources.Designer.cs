@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nf_SimpleNPF
+namespace Puzzle
 {
     
     internal partial class Resources
@@ -20,14 +20,31 @@ namespace nf_SimpleNPF
             {
                 if ((Resources.manager == null))
                 {
-                    Resources.manager = new System.Resources.ResourceManager("nf_SimpleNPF.Resources", typeof(Resources).Assembly);
+                    Resources.manager = new System.Resources.ResourceManager("Puzzle.Resources", typeof(Resources).Assembly);
                 }
                 return Resources.manager;
             }
         }
+        internal static nanoFramework.UI.Bitmap GetBitmap(Resources.BitmapResources id)
+        {
+            return ((nanoFramework.UI.Bitmap)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
+        }
         internal static nanoFramework.UI.Font GetFont(Resources.FontResources id)
         {
             return ((nanoFramework.UI.Font)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
+        }
+        [System.SerializableAttribute()]
+        internal enum BitmapResources : short
+        {
+            b3 = -28145,
+            b4 = -27204,
+            b9 = -26019,
+            b5 = -20880,
+            b2 = -8183,
+            b1 = 10850,
+            b6 = 26679,
+            b7 = 31481,
+            b8 = 31966,
         }
         [System.SerializableAttribute()]
         internal enum FontResources : short

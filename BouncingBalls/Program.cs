@@ -10,9 +10,7 @@ namespace nf_BouncingBalls
     {
         public static void Main()
         {
-            Bitmap fullScreenBitmap = new Bitmap(240, 135);
-        //    Bitmap fullScreenBitmap = new Bitmap(480, 272);
-            //DisplayControl.FullScreen;
+            Bitmap fullScreenBitmap = new Bitmap(DisplayControl.ScreenWidth, DisplayControl.ScreenHeight);
             fullScreenBitmap.Clear();
             BouncingBalls bb = new BouncingBalls(fullScreenBitmap);
         }
