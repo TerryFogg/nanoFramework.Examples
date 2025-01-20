@@ -6,15 +6,39 @@ namespace NFApp2
 {
     public class Program
     {
+        public class baseClass1
+        {
+            public int intValue { get; set; }
+            public int stringValue { get; set; }
+        }
+
+        public class  inhertBaseClass1 : baseClass1        {
+            
+        }
+
+
+
         public static void Main()
         {
+
+
+
+
+            throw new Exception("Unknown touch event.");
+
             Debug.WriteLine("Hello from nanoFramework!");
+
+            long NumberOfTicks = DateTimeTest();
+            Debug.WriteLine("Number of ticks ${NumberOfTicks}");
 
             Thread.Sleep(Timeout.Infinite);
 
-            // Browse our samples repository: https://github.com/nanoframework/samples
-            // Check our documentation online: https://docs.nanoframework.net/
-            // Join our lively Discord community: https://discord.gg/gCyBu8T
+        }
+        private static long DateTimeTest()
+        {
+            DateTime dt = new DateTime();
+            long NumberOfTicks = dt.Ticks;
+            return NumberOfTicks;
         }
     }
 }
