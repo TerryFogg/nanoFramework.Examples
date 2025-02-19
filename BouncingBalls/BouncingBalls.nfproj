@@ -28,32 +28,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="mscorlib">
-      <HintPath>..\packages\nanoFramework.CoreLibrary.1.15.5\lib\mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.Graphics">
-      <HintPath>..\packages\nanoFramework.Graphics.1.2.22\lib\nanoFramework.Graphics.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.Graphics.Core">
-      <HintPath>..\packages\nanoFramework.Graphics.Core.1.2.22\lib\nanoFramework.Graphics.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.ResourceManager">
-      <HintPath>..\packages\nanoFramework.ResourceManager.1.2.19\lib\nanoFramework.ResourceManager.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.Runtime.Events">
-      <HintPath>..\packages\nanoFramework.Runtime.Events.1.11.18\lib\nanoFramework.Runtime.Events.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.Runtime.Native">
-      <HintPath>..\packages\nanoFramework.Runtime.Native.1.7.1\lib\nanoFramework.Runtime.Native.dll</HintPath>
-    </Reference>
-    <Reference Include="nanoFramework.System.Collections">
-      <HintPath>..\packages\nanoFramework.System.Collections.1.5.45\lib\nanoFramework.System.Collections.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources.resx">
       <Generator>nFResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -65,6 +39,15 @@
   <ItemGroup>
     <Content Include="Football.gif" />
     <None Include="Resources\Football.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\nanoframework\CoreLibrary\nanoFramework.CoreLibrary\CoreLibrary.nfproj" />
+    <ProjectReference Include="..\..\..\nanoframework\nanoFramework.ResourceManager\nanoFramework.ResourceManager\nanoFramework.ResourceManager.nfproj" />
+    <ProjectReference Include="..\..\..\nanoframework\nanoFramework.Runtime.Events\nanoFramework.Runtime.Events\nanoFramework.Runtime.Events.nfproj" />
+    <ProjectReference Include="..\..\..\nanoframework\nanoFramework.Runtime.Native\nanoFramework.Runtime.Native\nanoFramework.Runtime.Native.nfproj" />
+    <ProjectReference Include="..\..\..\nanoframework\System.Collections\nanoFramework.System.Collections\nanoFramework.System.Collections.nfproj" />
+    <ProjectReference Include="..\..\nanoFramework.Graphics\nanoFramework.Graphics.Core\nanoFramework.Graphics.Core.nfproj" />
+    <ProjectReference Include="..\..\nanoFramework.Graphics\nanoFramework.Graphics\nanoFramework.Graphics.nfproj" />
   </ItemGroup>
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>

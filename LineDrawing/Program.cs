@@ -10,11 +10,8 @@ namespace nf_LineDrawing
         public static void Main()
         {
             Font DisplayFont = Resources.GetFont(Resources.FontResources.segoeuiregular12);
-            //Bitmap fullScreenBitmap = new Bitmap(480, 272);
-            Bitmap fullScreenBitmap = new Bitmap(240, 135);
-            //            Bitmap fullScreenBitmap = new Bitmap(240, 240);
+            Bitmap fullScreenBitmap = new Bitmap(DisplayControl.ScreenWidth, DisplayControl.ScreenHeight);
             fullScreenBitmap.Clear();
-
             RandomDrawLine rdlt = new RandomDrawLine(fullScreenBitmap, DisplayFont);
         }
     }

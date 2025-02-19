@@ -3,13 +3,10 @@ using nanoFramework.Presentation.Controls;
 using nanoFramework.Presentation.Media;
 using nanoFramework.UI;
 using nanoFramework.UI.Input;
-using nf_simpleTouchDisplay;
-using System;
 using System.Drawing;
 
 namespace nf_simpleTouchDisplay
 {
-
     public class ApplicationMain : Application
     {
         static ApplicationMain myApplication;
@@ -19,10 +16,10 @@ namespace nf_simpleTouchDisplay
         public static void Start()
         {
             myApplication = new ApplicationMain();
-            Touch.Initialize(myApplication);     // Turn on touch notifications
-                                                 //       Window mainWindow = myApplication.CreateInkDrawingWindow();
-                                                 //   Window touchButtonWindow = myApplication.CreateTouchButtonsWindow();
+            Touch.Initialize(myApplication);
 
+            // Window mainWindow = myApplication.CreateInkDrawingWindow();
+            // Window touchButtonWindow = myApplication.CreateTouchButtonsWindow();
             CreateInkDrawingWindow();
             //     myApplication.Run(mainWindow);
             myApplication.Run(windowInkDrawing);
@@ -45,10 +42,6 @@ namespace nf_simpleTouchDisplay
             return windowInkDrawing;
         }
 
-
-
-        /// <summary>
-        /// </summary>
         /// <summary>
         /// Main window class, based on the standard Window.
         /// </summary>
@@ -84,8 +77,8 @@ namespace nf_simpleTouchDisplay
                 public ushort y;
             }
 
-            // Create 1000 points.
-            const int pointCount = 1000;
+            // Create 50 points.
+            const int pointCount = 50;
             point[] Points = new point[pointCount];
             int pointIndex = 0;
 
@@ -185,8 +178,7 @@ namespace nf_simpleTouchDisplay
                 r = 6;
 
                 // Change the text to show touch up and location.
-                text.TextContent = "TouchUp (" + x.ToString() + "," +
-                    y.ToString() + ")";
+                text.TextContent = "TouchUp (" + x.ToString() + "," +  y.ToString() + ")";
 
                 InvalidateRect(cx - r, cy - r, 2 * r, 2 * r);
             }
