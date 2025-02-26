@@ -29,10 +29,20 @@ namespace TouchExample1
         {
             return ((nanoFramework.UI.Font)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
         }
+        internal static string GetString(Resources.StringResources id)
+        {
+            return ((string)(nanoFramework.Runtime.Native.ResourceUtility.GetObject(ResourceManager, id)));
+        }
+        [System.SerializableAttribute()]
+        internal enum StringResources : short
+        {
+            String1 = 1228,
+        }
         [System.SerializableAttribute()]
         internal enum FontResources : short
         {
             small = 13070,
+            comicsansms16 = 18566,
         }
     }
 }
